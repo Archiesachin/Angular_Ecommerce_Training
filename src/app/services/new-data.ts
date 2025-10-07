@@ -10,5 +10,13 @@ export class NewData {
   getJsonData(): Observable<any[]> {
     return this.http.get<any[]>('http://localhost:3000/new_products');
   }
+
+  getMensData(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:3001/mens-product')
+  }
+
+  getWomensData(): Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:3002/women-products')
+  }
   
 }

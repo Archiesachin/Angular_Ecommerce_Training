@@ -1,1 +1,69 @@
-<p>women works!</p>
+  <div class="new-section-bg">
+    <div class="new-breadcrumb">Home <span>/</span> Womens</div>
+    <h1 class="new-title">Womens</h1>
+    <p class="new-desc">
+      The world's most comfortable shoes for life's everyday adventures.
+    </p>
+    <div class="new-controls">
+      <div class="new-filter" id="filterToggle">
+        <div class="filter-icon-circle">
+          <svg class="filter-sliders-svg" width="32" height="32" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="16" r="15" stroke="#23201c" stroke-width="1" fill="none" />
+            <line x1="10" y1="12" x2="22" y2="12" stroke="#23201c" stroke-width="1" />
+            <circle cx="13" cy="12" r="1.2" fill="#23201c" />
+            <line x1="10" y1="16" x2="22" y2="16" stroke="#23201c" stroke-width="1" />
+            <circle cx="19" cy="16" r="1.2" fill="#23201c" />
+            <line x1="10" y1="20" x2="22" y2="20" stroke="#23201c" stroke-width="1" />
+            <circle cx="16" cy="20" r="1.2" fill="#23201c" />
+          </svg>
+        </div>
+        <span style="font-weight: 500">FILTER</span>
+        <span class="new-product-count" id="productCount">(0 products)</span>
+      </div>
+      <select class="featured-dropdown" id="sortDropdown">
+        <option value="FEATURED">FEATURED</option>
+        <option value="BESTSELLING">BEST SELLING</option>
+        <option value="ALPHA_AZ">ALPHABETICALLY, A-Z</option>
+        <option value="ALPHA_ZA">ALPHABETICALLY, Z-A</option>
+        <option value="PRICE_LOW_HIGH">PRICE, LOW TO HIGH</option>
+        <option value="PRICE_HIGH_LOW">PRICE, HIGH TO LOW</option>
+        <option value="DATE_OLD_NEW">DATE, OLD TO NEW</option>
+        <option value="DATE_NEW_OLD">DATE, NEW TO OLD</option>
+      </select>
+    </div>
+    <div id="filterPillsBar"></div>
+    <div id="filterPanel" style="display:none;"></div>
+<div class="new-products-wrapper" id="productsGrid">
+  <div *ngFor="let product of products" class="product-card">
+    <p class="product-label">{{ product.label }}</p>
+
+    <!-- Image updates based on selected color -->
+    <img
+      [src]="getSelectedVariant(product)?.image"
+      [alt]="product.product_name"
+      class="product-image"
+    />
+
+    <div class="product-body">
+      <p class="product-subtitle">
+      {{ getSelectedVariant(product)?.subtitle }}
+    </p>
+       <p class="product-title">{{ product.product_name }}</p>
+      <p class="product-price">${{ product.price }}</p>
+    </div>
+
+     <div class="color-choices">
+      <button
+        *ngFor="let variant of product.variants; let i = index"
+        [style.background]="variant.colorHex"
+        [class.selected]="selectedVariantIndexes[product.id] === i"
+        (click)="onColorSelect(product.id, i)"
+        class="color-choice"
+        title="{{ variant.colorName }}"
+      >
+      </button>
+    </div>
+  </div>
+</div>
+
+  
