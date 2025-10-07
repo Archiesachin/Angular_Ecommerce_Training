@@ -6,6 +6,7 @@
   padding: 7px 0; 
   font-size: 12px; 
   font-family: "Lexend Exa", sans-serif;
+  width: 100%;
 }
 
 nav{
@@ -76,56 +77,6 @@ nav{
   color: black;
 }
 
-@media (max-width: 900px) {
-  .navbar{
-    flex-direction: column;
-    height: auto;
-    overflow-y: hidden;
-    padding: 0;
-  }
-
-  .laptop-nav{
-    display: flex;
-    align-items: center;
-    padding: 5px 17px 5px 10px;
-    gap: 167px;
-  }
-  .nav-part1{
-    gap: 0;
-  }
-  .nav-links ul {
-    display: none;
-  }
-
-  .logo img{
-    width: 108px;
-    height: 40px;
-  }
-  .menu-icon {
-    display: block;
-  }
-  .nav-options a, .nav-options svg{
-    gap: 1.5rem;
-    font-size: 16px;
-  }
-
-  .mobile-nav-links{
-    display: block;
-    background-color: blanchedalmond;
-    padding: 10px;
-  }
-
-  .mobile-nav-links ul{
-    display: flex;
-    justify-content: space-evenly;
-  }
-
-  .mobile-nav-links ul a{
-    color: black;
-    text-decoration: none;
-    font-size: 14px;
-  }
-}
 
 
 /*Footer*/
@@ -135,6 +86,7 @@ nav{
   background-color: #333; 
   color: #fff; 
   padding: 30px; 
+  margin-top: 50px;
 }
 
 
@@ -194,6 +146,74 @@ nav{
   font-size: 12px;
   font-family: "Poppins", sans-serif;
 }
+
+@media (max-width: 900px) {
+
+  .header{
+    padding: 7px 3px;
+  }
+  .navbar{
+    flex-direction: column;
+    height: auto;
+    overflow-y: hidden;
+    padding: 0;
+    margin-top: 18px;
+  }
+
+  .laptop-nav{
+    display: flex;
+    align-items: center;
+    padding: 5px 17px 5px 10px;
+    gap: 167px;
+  }
+  .nav-part1{
+    gap: 0;
+  }
+  .nav-links ul {
+    display: none;
+  }
+
+  .logo img{
+    width: 93px;
+    height: 33px;
+  }
+  .menu-icon {
+    display: block;
+  }
+  .nav-options a, .nav-options svg{
+    gap: 1.5rem;
+    font-size: 13px;
+  }
+
+  .mobile-nav-links{
+    display: block;
+    background-color: blanchedalmond;
+    padding: 10px;
+  }
+
+  .mobile-nav-links ul{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-nav-links ul a{
+    color: black;
+    text-decoration: none;
+    font-size: 14px;
+  }
+
+  .footer{
+    width: 89%;
+  }
+
+  .footer-main{
+    display: grid;
+    grid-template-columns: 1fr ;
+  }
+}
+
 
 
 
