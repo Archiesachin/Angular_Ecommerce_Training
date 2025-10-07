@@ -61,6 +61,10 @@ nav{
   display: none;
 }
 
+.nav-options i {
+  font-size: 20px;
+}
+
 @media (max-width: 900px) {
   .navbar{
     flex-direction: column;
