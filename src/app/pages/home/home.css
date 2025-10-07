@@ -1,0 +1,120 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.hero-container{
+    position: relative;
+    width: 97%;
+    height: 530px;
+    overflow: hidden ;
+    margin:-81px 20px 30px 20px;
+    border-radius: 20px;
+}
+
+.slideshow-img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.text-part{
+    position: absolute;
+    top: 300px;
+    right: 40px;
+    color: white;
+    padding: 30px;
+    text-align: right;
+}
+
+.text-part p{
+    font-size: 20px;
+    padding: 15px;
+    text-transform: uppercase;
+    word-spacing: 2px;
+    font-family: "Fjord One", serif;
+}
+
+.text-part h4{
+    font-size: 25px;
+    padding: 0 15px;
+    /* letter-spacing: 3px; */
+    font-weight: normal;
+    font-family: "Poppins", sans-serif;
+}
+
+.buttons{
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+    padding-top: 15px;
+}
+
+.button-homepage{
+    padding: 10px;
+    font-size: 12px;
+    border-radius: 30px;
+    border: none;
+    font-weight: bold;
+    width: 150px;
+    font-family: "Lexend Exa", sans-serif;
+    transition: 0.3s ease-in;
+}
+
+.button-homepage:hover{
+    color: white;
+    background-color: rgb(56, 56, 56);
+    cursor: pointer;
+}
+
+@media (max-width: 1165px) {
+  .text-part {
+    display: none !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .hero-container {
+    height: auto;              /* Allow to shrink to content */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    /* Optional: add padding or margins to separate sections */
+    padding-bottom: 20px;
+  }
+  .slideshow-img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+  .text-part {
+    position: static !important; /* Removes absolute positioning */
+    top: unset;
+    right: unset;
+    left: unset;
+    margin: 20px 0 0 0;         /* Space above the text */
+    text-align: center !important; /* Center text and buttons */
+    padding: 24px 0 0 0;
+    width: 100%;
+    background: none;
+    color: #222; /* Pick color for good contrast on beige */
+    font-size: 18px; /* Optional: reduce font size for mobile */
+  }
+  .text-part p, .text-part h4 {
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
+  }
+  .buttons {
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+}
+
+
+
