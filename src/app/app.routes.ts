@@ -1,11 +1,19 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
-import { ContactUs } from './pages/contact-us/contact-us';
 import { Cart } from './pages/cart/cart';
+import { Mens } from './pages/mens/mens';
+import { Women } from './pages/women/women';
+import { NewArrival } from './pages/new-arrival/new-arrival';
+import { Checkout } from './pages/checkout/checkout';
+import { User } from './pages/user/user';
 
 export const routes: Routes = [
     {path:"", component:Home}, 
-    {path:"contact-us", component:ContactUs},
     {path:"cart", component:Cart},
+    {path:"user", component:User},
+    {path:"mens", component:Mens},
+    {path:"women", component:Women},
+    {path:"new-arrival", component:NewArrival},
+    {path:"checkout", component:Checkout},
 
 ];

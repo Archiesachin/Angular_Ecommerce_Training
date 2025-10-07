@@ -61,8 +61,9 @@ nav{
   display: none;
 }
 
-.nav-options i {
+.nav-options a i {
   font-size: 20px;
+  color: black;
 }
 
 @media (max-width: 900px) {
@@ -115,5 +116,76 @@ nav{
     font-size: 14px;
   }
 }
+
+
+/*Footer*/
+
+
+.footer {
+  background-color: #333; 
+  color: #fff; 
+  padding: 30px; 
+}
+
+
+.footer-top {
+  text-align: center; /* Center the text */
+  padding-bottom: 20px; /* Space below the top section */
+}
+
+.footer-main {
+  display: grid;
+  grid-template-columns: 40% 20% 20% 20%;
+}
+
+.input-field{
+  display: flex;
+
+}
+
+.input-field input{
+  padding: 15px;
+  border: none;
+  width: 280px;
+  border-bottom-left-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
+.input-field button{
+  padding: 14px;
+  border: none;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  font-weight: bold;
+  background-color: white;
+}
+
+
+.footer-section h4 {
+  margin-bottom: 10px; 
+  font-size: 18px;
+  font-family: 'Ekster-Regular', Arial, sans-serif;
+}
+
+.footer-section ul {
+  list-style-type: none; 
+  padding: 0; 
+}
+
+.footer-section li {
+  margin-bottom: 15px; 
+  font-size: 12px;
+  font-family: "Lexend Exa", sans-serif;
+}
+
+.footer-bottom {
+  text-align: center; 
+  margin-top: 20px; 
+  font-size: 12px;
+  font-family: "Poppins", sans-serif;
+}
+
+
+
 
 
