@@ -16,7 +16,7 @@ export class Product {
   product: any;
   loading = true;
   selectedImage: string | null = null;
-   selectedSize = '5';
+  selectedSize = '5';
 
 
 
