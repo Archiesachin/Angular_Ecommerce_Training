@@ -15,5 +15,6 @@ export const routes: Routes = [
     {path:"women", component:Women},
     {path:"new-arrival", component:NewArrival},
     {path:"checkout", component:Checkout},
+    
 
 ];
