@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {NewData} from '../../services/new-data'
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-mens',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './mens.html',
   styleUrl: './mens.css'
 })

@@ -37,12 +37,13 @@
   <div *ngFor="let product of products" class="product-card">
     <p class="product-label">{{ product.label }}</p>
 
-    <!-- Image updates based on selected color -->
+    <a [routerLink]="['/product', 'mens', product.id]">
     <img
       [src]="getSelectedVariant(product)?.image"
       [alt]="product.product_name"
       class="product-image"
     />
+    </a>
 
     <div class="product-body">
       <p class="product-subtitle">

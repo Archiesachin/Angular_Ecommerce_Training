@@ -36,72 +36,30 @@
     <span>RECOMMENDED FOR YOU</span>
   </div>
   <div class="carousel-wrapper">
-     <div class="rec-products-slider">
-    <div class="rec-card">
-      <img src="/images/mens/womenshoe.png " alt="Anytime No Show Sock" class="rec-product-img" />
-      <div class="rec-content">
-        <div class="rec-title">Anytime No Show Sock</div>
-        <div class="rec-dots">
-          <span class="dot" style="background:#fff"></span>
-          <span class="dot" style="background:#000"></span>
-          <span class="dot" style="background:#9b9b9b"></span>
-          <span class="dot" style="background:#c5c3bf"></span>
-        </div>
-        <div class="rec-prices">
-          <span class="rec-sale">$9</span>
-          <span class="rec-list">$14</span>
-        </div>
-        <div class="rec-controls-group">
-          <select class="rec-size-dropdown">
-            <option>Size: M (W8-9)</option>
-            <option>Size: S (W5-7)</option>
-          </select>
-          <button class="rec-add-btn">Add</button>
-        </div>
+    <div class="rec-products-slider">
+  <div class="rec-card" *ngFor="let rec of recommendedProducts">
+    <img [src]="rec.image" [alt]="rec.product_name" class="rec-product-img" />
+    <div class="rec-content">
+      <div class="rec-title">{{ rec.product_name }}</div>
+      <div class="rec-prices">
+        <span class="rec-sale">${{ rec.price }}</span>
+        <span class="rec-list">${{ rec.original_price }}</span>
+      </div>
+      <div class="rec-controls-group">
+        <select [(ngModel)]="rec.selectedSize" class="rec-size-dropdown">
+          <option value="" disabled selected>Select Size</option>
+          <option *ngFor="let s of rec.sizes">{{ s }}</option>
+        </select>
+        <button (click)="addToCart(rec, rec.selectedSize)" class="rec-add-btn">
+          Add
+        </button>
       </div>
     </div>
-    <!-- Product 2 -->
-    <div class="rec-card">
-      <img src="/images/mens/lightgrey.png" alt="Low Cut Sock" class="rec-product-img" />
-      <div class="rec-content">
-        <div class="rec-title">Low Cut Sock</div>
-        <div class="rec-dots">
-          <span class="dot" style="background:#fff"></span>
-          <span class="dot" style="background:#000"></span>
-        </div>
-        <div class="rec-prices">
-          <span class="rec-sale">$9</span>
-        </div>
-        <div class="rec-controls-group">
-          <select class="rec-size-dropdown">
-            <option>Size: M (W8-9)</option>
-            <option>Size: S (W5-7)</option>
-          </select>
-          <button class="rec-add-btn">Add</button>
-        </div>
-      </div></div>
-
-      <div class="rec-card">
-      <img src="/images/mens/lightgrey.png" alt="Low Cut Sock" class="rec-product-img" />
-      <div class="rec-content">
-        <div class="rec-title">Low Cut Sock</div>
-        <div class="rec-dots">
-          <span class="dot" style="background:#fff"></span>
-          <span class="dot" style="background:#000"></span>
-        </div>
-        <div class="rec-prices">
-          <span class="rec-sale">$9</span>
-        </div>
-        <div class="rec-controls-group">
-          <select class="rec-size-dropdown">
-            <option>Size: M (W8-9)</option>
-            <option>Size: S (W5-7)</option>
-          </select>
-          <button class="rec-add-btn">Add</button>
-        </div>
-      </div></div>
- 
   </div>
+
+    
+ 
+    </div>
  
 </div>
 </div>
