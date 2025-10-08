@@ -69,8 +69,8 @@ body { font-family: 'Lexend Exa',  sans-serif; background: #f8f6f4; }
   gap: 20px;
 }
 
-.empty-cart i{
-  font-size: 200px;
+.empty-cart img{
+  width: 200px;
 }
 
 .empty-cart p{
