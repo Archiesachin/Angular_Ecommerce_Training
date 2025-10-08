@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { CartService } from '../../services/cart-service';
 
 
@@ -8,7 +9,7 @@ import { CartService } from '../../services/cart-service';
   templateUrl: './cart.html',
   styleUrls: ['./cart.css'],
   standalone: true,
-  imports: [CommonModule]
+  imports: [CommonModule, RouterLink]
 })
 export class CartComponent {  
  cart: any[] = [];
