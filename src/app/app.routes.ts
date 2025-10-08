@@ -6,6 +6,7 @@ import { Women } from './pages/women/women';
 import { NewArrival } from './pages/new-arrival/new-arrival';
 import { Checkout } from './pages/checkout/checkout';
 import { User } from './pages/user/user';
+import { Product } from './pages/product/product';
 
 export const routes: Routes = [
     {path:"", component:Home}, 
@@ -15,5 +16,6 @@ export const routes: Routes = [
     {path:"women", component:Women},
     {path:"new-arrival", component:NewArrival},
     {path:"checkout", component:Checkout},
+    {path:"product/:type/:id", component:Product}
 
 ];

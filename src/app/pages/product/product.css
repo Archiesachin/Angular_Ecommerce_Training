@@ -1,0 +1,195 @@
+.singleProduct-wrapper{
+    margin: 10px  30px 10px 30px;
+   
+}
+
+.products-breadcrumb{
+    font-size: 15px;
+    text-decoration: none;
+    padding: 20px;
+    color: #757575;
+    font-family: "Lexend Exa", sans-serif;
+}
+
+.products-breadcrumb a{
+    text-decoration: none;
+    color: #757575;
+}
+
+
+.productImage-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+}
+
+
+.singleProduct-img{
+    width: 500px;
+    height: 500px;
+}
+
+.producImage-other{
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.producImage-other img{
+    width: 100px;
+    height: 100px;
+    border: 0.5px solid #757575;
+}
+
+.single-product-title{
+    font-family: "Lexend Era", sans-serif;
+    font-size: 30px;
+    font-weight: normal;
+    padding-bottom:10px ;
+}
+
+.single-product-desc{
+    color: #575755;
+    font-family: "Lexend Exa", sans-serif;
+    letter-spacing: -1px;
+}
+
+.title-price{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.single-product-price{
+    font-size: 25px;
+    padding-bottom: 10px;
+    font-family: "Lexend Exa", sans-serif;
+}
+
+.size-cart{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: white;
+    border-radius: 20px;
+    margin: 30px;
+
+}
+
+.add-button-grp{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.dropdown select{
+    width: 200px;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+}
+
+
+.add-button-grp button{
+    background-color: black;
+    color: white;
+    width: 200px;
+    padding: 10px;
+    border: none;
+    border-radius: 20px;
+    font-size: 15px;
+}
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .productImage-container {
+        flex-direction: column; /* Stack image and thumbnails vertically */
+        align-items: center;
+        gap:0px;
+    }
+    .products-breadcrumb{
+        margin-bottom:20px;
+    }
+
+    .singleProduct-img {
+        width: auto;
+        height:400px;
+    }
+
+     .producImage-other{
+        flex-direction: row;
+        
+     }
+    .producImage-other img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .single-product-title {
+        font-size: 20px;
+    }
+
+    .single-product-price {
+        font-size: 18px;
+    }
+
+   
+    .add-button-grp{
+        width:auto;
+        flex-direction: column;
+    }
+
+    .dropdown select,
+    .add-button-grp button {
+        width:auto
+    }
+}
+
+@media (max-width: 480px) {
+    .singleProduct-wrapper {
+        margin: 10px;
+        padding: 5px;
+    }
+
+
+    .producImage-other img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .single-product-title {
+        font-size: 18px;
+    }
+
+    .single-product-price {
+        font-size: 16px;
+    }
+     .singleProduct-img {
+      max-width:450px;
+      height:300px;
+    }
+
+    .dropdown select,
+    .add-button-grp button {
+        max-width: 200px;
+    }
+        .size-cart {
+        padding: 15px; /* Further reduce padding */
+        gap: 10px; /* Adjust spacing */
+    }
+    .add-button-grp button{
+        width:auto
+    }
+}
+/* For screens smaller than 768px */
+@media (max-width: 996px) {
+    .size-cart {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items */
+        padding: 20px; /* Reduce padding */
+        gap: 15px; /* Adjust spacing */
+    }
+}
+
