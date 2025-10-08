@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable , map} from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class NewData {
@@ -17,6 +17,24 @@ export class NewData {
 
   getWomensData(): Observable<any[]> {
     return this.http.get<any[]>('http://localhost:3002/women-products')
+  }
+
+    getProductByIdFromNewArrivals(id: string): Observable<any | undefined> {
+    return this.getJsonData().pipe(
+      map(products => products.find(product => product.id === id))
+    );
+  }
+
+  getProductByIdFromMens(id: string): Observable<any | undefined> {
+    return this.getMensData().pipe(
+      map(products => products.find(product => product.id === id))
+    );
+  }
+
+  getProductByIdFromWomens(id: string): Observable<any | undefined> {
+    return this.getWomensData().pipe(
+      map(products => products.find(product => product.id === id))
+    );
   }
   
 }

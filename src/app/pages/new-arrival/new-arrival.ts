@@ -1,13 +1,14 @@
 import { Component, OnInit} from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule} from '@angular/common';
 import { NewData } from '../../services/new-data';
+import { RouterModule } from '@angular/router';
 
 
 
 
 @Component({
   standalone: true,
-  imports:[CommonModule],
+  imports:[CommonModule, RouterModule],
   selector: 'app-new-arrival',
   templateUrl: './new-arrival.html',
   styleUrl: './new-arrival.css'

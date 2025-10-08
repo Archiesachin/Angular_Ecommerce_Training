@@ -1,1 +1,53 @@
-<p>product works!</p>
+
+
+<div *ngIf="!loading && product">
+
+  <!-- Big Selected Image Container -->
+   <div class="singleProduct-wrapper">
+
+     <div class="products-breadcrumb">
+        <a href="">Home</a><span>/</span> Product Details
+      </div>
+
+    <div class="productImage-container">
+    <div class="producImage-other">
+        <img
+      *ngFor="let img of product.images"
+      [src]="img"
+      [alt]="product.product_name"
+      [class.selected]="img === selectedImage"
+      (click)="onSelectImage(img)"
+    />
+    </div>
+    <img
+      [src]="selectedImage"
+      [alt]="product.product_name"
+      class="singleProduct-img"
+    />
+   </div>
+
+   <div class="title-price">
+        <h1 class="single-product-title">{{ product.product_name }}</h1>
+        <p class="single-product-price">$ {{ product.price }}</p>
+   </div>
+  <p class="single-product-desc">{{ product.description }}</p>
+</div>
+<div class="size-cart">
+  <h2>Explore product Details</h2>
+  <div class="add-button-grp">
+    <div class="dropdown">
+      <select
+        name="size-dropdown"
+        [ngModel]="selectedSize"
+        (ngModelChange)="selectedSize = $event"
+      >
+        <option value="size">Size</option>
+        <option *ngFor="let size of sizes" [value]="size">{{ size }}</option>
+      </select>
+    </div>
+    <button (click)="addToCart()">Add to Cart</button>
+  </div>
+</div>
+<div *ngIf="!loading && !product">
+  <p>Product not found.</p>
+</div>
