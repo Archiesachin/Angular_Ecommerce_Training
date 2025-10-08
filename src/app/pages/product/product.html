@@ -45,7 +45,7 @@
         <option *ngFor="let size of sizes" [value]="size">{{ size }}</option>
       </select>
     </div>
-    <button (click)="handleAddToCart()">Add to Cart</button>
+    <button (click)="addToCart()">Add to Cart</button>
   </div>
 </div>
 <div *ngIf="!loading && !product">

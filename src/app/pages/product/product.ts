@@ -1,8 +1,9 @@
 import { Component,OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { NewData } from '../../services/new-data';
 import { FormsModule } from '@angular/forms';
+import { CartService } from '../../services/cart-service';
 
 @Component({
   selector: 'app-product',
@@ -15,8 +16,16 @@ export class Product {
   product: any;
   loading = true;
   selectedImage: string | null = null;
+   selectedSize = '5';
 
-  constructor(private route: ActivatedRoute, private dataService: NewData) {}
+
+
+  constructor(
+    private route: ActivatedRoute, 
+    private dataService: NewData,
+    private cartService: CartService, 
+    private router: Router   
+  ) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
@@ -54,20 +63,24 @@ export class Product {
    sizes: string[] = [
     '5', '5.5', '6', '6.5', '7', '7.5', '8', '8.5', '9', '9.5', '10', '11'
   ];
-  selectedSize = '';
 
   handleSizeChange(event: Event) {
     const target = event.target as HTMLSelectElement;
     this.selectedSize = target.value;
   }
 
-  handleAddToCart() {
-    if (!this.selectedSize || this.selectedSize === 'size') {
-      alert('Please select a size before adding to cart.');
+   addToCart() {
+    if (!this.selectedSize) {
+      alert('Please select a size');
       return;
     }
-    // Add your cart service logic here
-    alert('Added to cart: Size ' + this.selectedSize);
+
+    this.cartService.addToCart(this.product, this.selectedSize);
+    this.router.navigate(['/cart']);
   }
+
+ 
+
+  
 
 }
