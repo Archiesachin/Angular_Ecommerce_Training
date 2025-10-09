@@ -1,14 +1,14 @@
 <div class="cart-container">
-
+ 
   <!-- Cart Header -->
   <div class="cart-header">
     <span class="cart-title">CART</span>
   </div>
-
-
+ 
+ 
   <div *ngIf="cart.length === 0">
     <div class="empty-cart">
-      <i class="fa fa-cart-plus" aria-hidden="true"></i>
+      <img src="images/cart.png" alt="">
       Cart is empty.
       <p>Looks like you haven't made your choice yet..</p>
     </div>
@@ -56,15 +56,15 @@
       </div>
     </div>
   </div>
-
-    
+ 
+   
  
     </div>
  
 </div>
 </div>
  
-
+ 
   <!-- Footer -->
   <div class="cart-footer" *ngIf="cart.length > 0">
     <div class="subtotal-row">
